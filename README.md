@@ -1,39 +1,64 @@
 # Dotfiles
 
-Configuración personal para macOS con stack de desarrollo React/TypeScript/Node.
+Configuración personal para **macOS** y **Windows** con stack de desarrollo React/TypeScript/Node.
 
 ## Contenido
 
 ```
 dotfiles/
-├── .zshrc                 # Configuración de Zsh optimizada
+├── .zshrc                 # Configuración de Zsh (macOS)
 ├── .zshenv                # Variables de entorno (Volta)
-├── .gitconfig             # Git config + aliases + GPG signing
+├── .gitconfig             # Git config (macOS)
 ├── .gitignore_global      # Gitignore global
 ├── .npmrc                 # Configuración de npm
 ├── .editorconfig          # Estilo de código global
 ├── .p10k.zsh              # Tema Powerlevel10k
 ├── Brewfile               # Paquetes de Homebrew
+├── install.sh             # Script de instalación (macOS)
 ├── ssh/
-│   └── config             # Configuración SSH
+│   └── config             # Configuración SSH (macOS)
 ├── gnupg/
 │   ├── gpg.conf           # Configuración GPG
 │   └── gpg-agent.conf     # Agente GPG con pinentry-mac
 ├── vscode/
 │   └── settings.json      # Settings de VS Code
 ├── iterm2/
-│   └── com.googlecode.iterm2.plist  # Configuración iTerm2
+│   └── com.googlecode.iterm2.plist
 ├── macos/
 │   └── defaults.sh        # Configuración de macOS
-└── install.sh             # Script de instalación
+├── claude/
+│   ├── CLAUDE.md          # Instrucciones para Claude Code
+│   ├── settings.json      # Settings de Claude Code
+│   ├── commands/          # Comandos personalizados
+│   └── scripts/           # Scripts de hooks
+└── windows/               # Configuración de Windows
+    ├── install.ps1        # Script de instalación
+    ├── .gitconfig         # Git config (Windows)
+    ├── powershell/
+    │   └── Microsoft.PowerShell_profile.ps1
+    ├── terminal/
+    │   └── settings.json  # Windows Terminal
+    └── ssh/
+        └── config         # Configuración SSH
 ```
 
 ## Instalación rápida
+
+### macOS
 
 ```bash
 git clone https://github.com/reiorozco/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./install.sh
+```
+
+### Windows
+
+```powershell
+git clone https://github.com/reiorozco/dotfiles.git $env:USERPROFILE\dotfiles
+cd $env:USERPROFILE\dotfiles\windows
+# Ejecutar como Administrador
+.\install.ps1
 ```
 
 ## Qué instala
@@ -178,3 +203,76 @@ git push
 | `git undo` | reset --soft HEAD~1 |
 | `git sync` | fetch + rebase origin/main |
 | `git pushf` | push --force-with-lease |
+
+---
+
+## Windows
+
+### Qué instala
+
+#### Aplicaciones (via winget)
+
+| App | Descripción |
+|-----|-------------|
+| PowerShell Core | Shell moderno |
+| Windows Terminal | Terminal con tabs y splits |
+| Oh-My-Posh | Prompt moderno con temas |
+| VS Code | Editor principal |
+| Cursor | Editor con AI |
+| Docker Desktop | Contenedores |
+| Postman | API testing |
+
+#### Módulos PowerShell
+
+| Módulo | Descripción |
+|--------|-------------|
+| Terminal-Icons | Iconos en `ls` |
+| z | Navegación rápida |
+| posh-git | Autocompletado git |
+| PSReadLine | Historial predictivo |
+
+### Configuraciones incluidas
+
+#### PowerShell Profile
+- Oh-My-Posh con tema `catppuccin_mocha`
+- PSReadLine con predicción de historial
+- Aliases: `g`, `c`, `ll`, `..`, `...`
+- Git shortcuts: `gs`, `ga`, `gc`, `gp`, `gl`, `glog`
+- Funciones: `mkcd`, `reload`, `myip`, `work`, `desktop`
+
+#### Windows Terminal
+- Tema: One Half Dark
+- Fuente: CaskaydiaCove Nerd Font
+- Atajos: Ctrl+T (nueva tab), Alt+Shift+Plus (split)
+
+#### Git
+- Auto-rebase en pull
+- Auto-setup remote en push
+- 25+ aliases
+
+### PowerShell Shortcuts
+
+| Comando | Acción |
+|---------|--------|
+| `g` | git |
+| `c` | code |
+| `ll` | ls con iconos |
+| `..` / `...` | Subir 1/2 niveles |
+| `work` | Ir a Desktop/Work |
+| `z <nombre>` | Saltar a directorio |
+| `gs` | git status |
+| `gp` / `gl` | git push/pull |
+| `glog` | git log gráfico |
+| `mkcd <dir>` | Crear carpeta y entrar |
+| `reload` | Recargar perfil |
+
+### Atajos Windows Terminal
+
+| Atajo | Acción |
+|-------|--------|
+| `Ctrl+T` | Nueva pestaña |
+| `Ctrl+W` | Cerrar pestaña |
+| `Ctrl+Tab` | Siguiente pestaña |
+| `Alt+Shift+Plus` | Split vertical |
+| `Alt+Shift+Minus` | Split horizontal |
+| `Alt+Flechas` | Mover entre paneles |

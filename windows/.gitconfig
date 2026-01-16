@@ -1,0 +1,79 @@
+[user]
+	name = reiorozco
+	email = rfoc15@gmail.com
+
+[core]
+	editor = "C:\\Users\\rfoc1\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code" --wait
+	autocrlf = true
+	longpaths = true
+	ignorecase = false
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[alias]
+	# Status y logs
+	s = status -sb
+	l = log --oneline -15
+	lg = log --oneline --graph --decorate -20
+	last = log -1 HEAD --stat
+
+	# Branches
+	br = branch
+	bra = branch -a
+	co = checkout
+	cob = checkout -b
+
+	# Commits
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+
+	# Staging
+	a = add
+	aa = add --all
+	unstage = reset HEAD --
+
+	# Diff
+	d = diff
+	ds = diff --staged
+
+	# Stash
+	st = stash
+	stp = stash pop
+	stl = stash list
+
+	# Undo
+	undo = reset --soft HEAD~1
+	discard = checkout --
+
+	# Sync
+	sync = !git pull --rebase && git push
+
+	# Cleanup
+	cleanup = !git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d
+
+[color]
+	ui = auto
+
+[credential]
+	helper = manager
+
+[rerere]
+	enabled = true
