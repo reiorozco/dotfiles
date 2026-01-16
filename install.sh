@@ -114,6 +114,19 @@ if [ -f "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" ]; then
   cp "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" "$ITERM2_PLIST"
 fi
 
+# Claude Code config
+CLAUDE_DIR="$HOME/.claude"
+mkdir -p "$CLAUDE_DIR/commands" "$CLAUDE_DIR/scripts"
+backup_and_link "$DOTFILES_DIR/claude/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+backup_and_link "$DOTFILES_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
+for cmd in "$DOTFILES_DIR/claude/commands"/*.md; do
+  backup_and_link "$cmd" "$CLAUDE_DIR/commands/$(basename "$cmd")"
+done
+for script in "$DOTFILES_DIR/claude/scripts"/*.sh; do
+  backup_and_link "$script" "$CLAUDE_DIR/scripts/$(basename "$script")"
+  chmod +x "$CLAUDE_DIR/scripts/$(basename "$script")"
+done
+
 # macOS defaults
 if [ -f "$DOTFILES_DIR/macos/defaults.sh" ]; then
   echo ""
