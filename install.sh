@@ -95,6 +95,17 @@ VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER_DIR"
 backup_and_link "$DOTFILES_DIR/vscode/settings.json" "$VSCODE_USER_DIR/settings.json"
 
+# iTerm2 settings
+ITERM2_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+if [ -f "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" ]; then
+  echo "Installing iTerm2 settings..."
+  if [ -f "$ITERM2_PLIST" ]; then
+    mkdir -p "$BACKUP_DIR"
+    cp "$ITERM2_PLIST" "$BACKUP_DIR/"
+  fi
+  cp "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" "$ITERM2_PLIST"
+fi
+
 # --- FINALIZADO ---
 echo ""
 echo "=========================================="
