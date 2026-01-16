@@ -106,6 +106,16 @@ if [ -f "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" ]; then
   cp "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" "$ITERM2_PLIST"
 fi
 
+# macOS defaults
+if [ -f "$DOTFILES_DIR/macos/defaults.sh" ]; then
+  echo ""
+  read -p "Apply macOS defaults? (y/n) " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    bash "$DOTFILES_DIR/macos/defaults.sh"
+  fi
+fi
+
 # --- FINALIZADO ---
 echo ""
 echo "=========================================="
