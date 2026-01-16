@@ -91,6 +91,13 @@ chmod 700 "$HOME/.ssh"
 backup_and_link "$DOTFILES_DIR/ssh/config" "$HOME/.ssh/config"
 chmod 600 "$HOME/.ssh/config"
 
+# GPG config
+mkdir -p "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
+backup_and_link "$DOTFILES_DIR/gnupg/gpg.conf" "$HOME/.gnupg/gpg.conf"
+backup_and_link "$DOTFILES_DIR/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+chmod 600 "$HOME/.gnupg"/*
+
 # VS Code settings
 VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER_DIR"

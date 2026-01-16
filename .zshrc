@@ -165,3 +165,4 @@ function ranktitan() {
 
 # Entorno adicional
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
+export GPG_TTY=$(tty)

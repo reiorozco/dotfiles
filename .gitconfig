@@ -1,6 +1,7 @@
 [user]
 	name = reiorozco
 	email = rfoc15@gmail.com
+	signingkey = 5D272B9FBE2C966B
 
 [github]
 	user = reiorozco
@@ -81,3 +82,9 @@
 	tags = tag -l
 	remotes = remote -v
 	contributors = shortlog -sn --no-merges
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg

@@ -18,6 +18,10 @@ brew "zsh-syntax-highlighting"  # Colores en comandos
 brew "gh"                       # GitHub CLI
 brew "mprocs"                   # Ejecutar múltiples procesos
 
+# Security
+brew "gnupg"                    # GPG para firmar commits
+brew "pinentry-mac"             # Diálogo de contraseña GPG
+
 # AI
 brew "gemini-cli"               # CLI de Gemini AI
 
