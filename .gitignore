@@ -1,0 +1,16 @@
+# Backups locales
+.dotfiles_backup/
+
+# Archivos sensibles
+*.pem
+*.key
+id_*
+!ssh/config
+
+# macOS
+.DS_Store
+
+# Temporales
+*.swp
+*.swo
+*~

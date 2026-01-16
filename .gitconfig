@@ -1,0 +1,83 @@
+[user]
+	name = reiorozco
+	email = rfoc15@gmail.com
+
+[github]
+	user = reiorozco
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = code --wait
+	autocrlf = input
+	ignorecase = false
+	excludesfile = /Users/reiorozco/.gitignore_global
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[fetch]
+	prune = true
+	prunetags = true
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+
+[rerere]
+	enabled = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[merge]
+	conflictstyle = zdiff3
+
+[alias]
+	# Status y logs
+	st = status -sb
+	lg = log --oneline --graph --decorate -20
+	lga = log --oneline --graph --decorate --all -30
+	last = log -1 --stat
+
+	# Branches
+	co = checkout
+	cb = checkout -b
+	br = branch -vv
+	brd = branch -d
+	brD = branch -D
+
+	# Commits
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+
+	# Stash
+	ss = stash push -m
+	sp = stash pop
+	sl = stash list
+
+	# Undo y fix
+	undo = reset --soft HEAD~1
+	unstage = reset HEAD --
+	discard = checkout --
+
+	# Sync
+	sync = !git fetch --all && git rebase origin/main
+	pushf = push --force-with-lease
+
+	# Utilidades
+	aliases = config --get-regexp ^alias\\.
+	branches = branch -a
+	tags = tag -l
+	remotes = remote -v
+	contributors = shortlog -sn --no-merges
