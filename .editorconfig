@@ -1,0 +1,81 @@
+# EditorConfig - Configuración global
+# https://editorconfig.org
+
+root = true
+
+# --- DEFAULTS ---
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 100
+
+# --- JAVASCRIPT / TYPESCRIPT ---
+[*.{js,jsx,ts,tsx,mjs,cjs}]
+indent_size = 2
+quote_type = single
+
+# --- JSON ---
+[*.{json,jsonc}]
+indent_size = 2
+
+# --- HTML / CSS ---
+[*.{html,css,scss,sass,less}]
+indent_size = 2
+
+# --- YAML ---
+[*.{yml,yaml}]
+indent_size = 2
+
+# --- MARKDOWN ---
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# --- PYTHON ---
+[*.py]
+indent_size = 4
+max_line_length = 88
+
+# --- GO ---
+[*.go]
+indent_style = tab
+indent_size = 4
+
+# --- RUST ---
+[*.rs]
+indent_size = 4
+max_line_length = 100
+
+# --- SHELL ---
+[*.{sh,bash,zsh}]
+indent_size = 2
+
+# --- MAKEFILES ---
+[Makefile]
+indent_style = tab
+
+# --- DOCKER ---
+[Dockerfile*]
+indent_size = 2
+
+[docker-compose*.{yml,yaml}]
+indent_size = 2
+
+# --- CONFIG FILES ---
+[*.{toml,ini,cfg}]
+indent_size = 2
+
+[.env*]
+indent_size = 2
+
+# --- PRISMA ---
+[*.prisma]
+indent_size = 2
+
+# --- GRAPHQL ---
+[*.{graphql,gql}]
+indent_size = 2

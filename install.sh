@@ -83,6 +83,7 @@ backup_and_link "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 backup_and_link "$DOTFILES_DIR/.gitignore_global" "$HOME/.gitignore_global"
 backup_and_link "$DOTFILES_DIR/.npmrc" "$HOME/.npmrc"
 backup_and_link "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
+backup_and_link "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
 
 # SSH config
 mkdir -p "$HOME/.ssh"
