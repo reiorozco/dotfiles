@@ -3,9 +3,6 @@
 # Restaurar con: brew bundle --file=~/.Brewfile
 # ===========================================
 
-# --- TAPS ---
-tap "homebrew/bundle"
-
 # --- CLI TOOLS ---
 # Shell & Terminal
 brew "bat"                      # cat con syntax highlighting
