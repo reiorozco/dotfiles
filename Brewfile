@@ -44,6 +44,7 @@ cask "alt-tab"                  # Alt-tab estilo Windows
 cask "linearmouse"              # Configuración de mouse
 cask "keyclu"                   # Mostrar atajos de teclado
 cask "stats"                    # Monitor de sistema
+cask "appcleaner"               # Desinstalar apps completamente
 
 # AI
 cask "claude-code"              # CLI de Claude
