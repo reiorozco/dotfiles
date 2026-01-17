@@ -47,8 +47,8 @@ dotfiles/
 ### macOS
 
 ```bash
-git clone https://github.com/reiorozco/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/reiorozco/dotfiles.git ~/Dev/dotfiles
+cd ~/Dev/dotfiles
 ./install.sh
 ```
 
@@ -130,7 +130,7 @@ cd $env:USERPROFILE\dotfiles\windows
 - Finder: archivos ocultos, extensiones, path bar
 - Dock: autohide instantáneo, sin recientes
 - Teclado: repetición rápida, sin autocorrección
-- Screenshots: ~/Screenshots, PNG, sin sombra
+- Screenshots: ~/Pictures/Screenshots, PNG, sin sombra
 
 ### iTerm2
 - Fuente MesloLGS Nerd Font
@@ -177,7 +177,7 @@ p10k configure
 ## Actualizar
 
 ```bash
-cd ~/dotfiles
+cd ~/Dev/dotfiles
 git pull
 ./install.sh
 ```
@@ -185,7 +185,7 @@ git pull
 ## Backup manual
 
 ```bash
-cd ~/dotfiles
+cd ~/Dev/dotfiles
 git add -A
 git commit -m "Update configs"
 git push
