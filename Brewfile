@@ -34,6 +34,7 @@ cask "jetbrains-toolbox"        # IDEs JetBrains
 # DevOps
 cask "orbstack"                 # Docker & Linux VMs
 cask "postman"                  # API testing
+cask "fork"                     # Git client visual
 
 # Browser
 cask "google-chrome"            # Navegador principal
