@@ -99,9 +99,9 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock minimize-to-application -bool true
 
 # --- SCREENSHOTS ---
-# Guardar en ~/Screenshots
-mkdir -p ~/Screenshots
-defaults write com.apple.screencapture location -string "${HOME}/Screenshots"
+# Guardar en ~/Pictures/Screenshots
+mkdir -p ~/Pictures/Screenshots
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"
 
 # Formato PNG
 defaults write com.apple.screencapture type -string "png"
