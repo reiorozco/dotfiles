@@ -92,6 +92,22 @@ Import-Module z
 # --- posh-git: Autocompletado de git ---
 Import-Module posh-git
 
+# --- fzf: Fuzzy finder ---
+# Ctrl+R: Busqueda fuzzy en historial
+# Ctrl+T: Busqueda fuzzy de archivos
+if (Get-Command fzf -ErrorAction SilentlyContinue) {
+    Import-Module PSFzf
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+    Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+    $env:FZF_DEFAULT_OPTS = '--height 40% --layout=reverse --border'
+}
+
+# --- bat: cat con syntax highlighting ---
+if (Get-Command bat -ErrorAction SilentlyContinue) {
+    Set-Alias -Name cat -Value bat -Option AllScope
+    $env:BAT_THEME = "Catppuccin Mocha"
+}
+
 # --- Variables de entorno utiles ---
 $env:EDITOR = "code --wait"
 $env:VISUAL = "code --wait"
