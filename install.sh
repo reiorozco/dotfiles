@@ -122,6 +122,17 @@ if [ -f "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" ]; then
   cp "$DOTFILES_DIR/iterm2/com.googlecode.iterm2.plist" "$ITERM2_PLIST"
 fi
 
+# Terminal.app settings
+TERMINAL_PLIST="$HOME/Library/Preferences/com.apple.Terminal.plist"
+if [ -f "$DOTFILES_DIR/terminal/com.apple.Terminal.plist" ]; then
+  echo "Installing Terminal.app settings..."
+  if [ -f "$TERMINAL_PLIST" ]; then
+    mkdir -p "$BACKUP_DIR"
+    cp "$TERMINAL_PLIST" "$BACKUP_DIR/"
+  fi
+  defaults import com.apple.Terminal "$DOTFILES_DIR/terminal/com.apple.Terminal.plist"
+fi
+
 # Claude Code config
 CLAUDE_DIR="$HOME/.claude"
 mkdir -p "$CLAUDE_DIR/commands" "$CLAUDE_DIR/scripts"
