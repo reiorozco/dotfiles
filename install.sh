@@ -82,8 +82,11 @@ backup_and_link "$DOTFILES_DIR/.zshenv" "$HOME/.zshenv"
 backup_and_link "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 backup_and_link "$DOTFILES_DIR/.gitignore_global" "$HOME/.gitignore_global"
 backup_and_link "$DOTFILES_DIR/.npmrc" "$HOME/.npmrc"
-backup_and_link "$DOTFILES_DIR/.p10k.zsh" "$HOME/.p10k.zsh"
 backup_and_link "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
+
+# Starship prompt config
+mkdir -p "$HOME/.config"
+backup_and_link "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 
 # SSH config
 mkdir -p "$HOME/.ssh"
@@ -102,6 +105,11 @@ chmod 600 "$HOME/.gnupg"/*
 VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER_DIR"
 backup_and_link "$DOTFILES_DIR/vscode/settings.json" "$VSCODE_USER_DIR/settings.json"
+
+# Cursor settings
+CURSOR_USER_DIR="$HOME/Library/Application Support/Cursor/User"
+mkdir -p "$CURSOR_USER_DIR"
+backup_and_link "$DOTFILES_DIR/cursor/settings.json" "$CURSOR_USER_DIR/settings.json"
 
 # iTerm2 settings
 ITERM2_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
@@ -145,6 +153,6 @@ echo "=========================================="
 echo ""
 echo "Next steps:"
 echo "  1. Restart your terminal or run: exec zsh"
-echo "  2. Run 'p10k configure' if you want to customize the prompt"
+echo "  2. Configure iTerm2 font: MesloLGM Nerd Font (Preferences > Profiles > Text)"
 echo "  3. Generate SSH keys if needed: ssh-keygen -t ed25519 -C 'your@email.com'"
 echo ""

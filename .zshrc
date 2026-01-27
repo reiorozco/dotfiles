@@ -1,9 +1,9 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# --- STARSHIP PROMPT ---
+# (Reemplaza Powerlevel10k)
+
+# --- LOCALE UTF-8 ---
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # --- CONFIGURACIÓN BÁSICA ---
 export ZSH="$HOME/.oh-my-zsh"
@@ -24,7 +24,7 @@ setopt SHARE_HISTORY           # Compartir entre sesiones
 setopt INC_APPEND_HISTORY      # Guardar inmediatamente
 
 # --- OH MY ZSH ---
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""  # Deshabilitado - usando Starship
 
 plugins=(
   git
@@ -37,9 +37,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Autocompletado case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# --- POWERLEVEL10K ---
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # --- ALIASES GENERALES ---
 alias brewup="brew update && brew upgrade && brew cleanup"
@@ -166,3 +163,6 @@ function ranktitan() {
 # Entorno adicional
 [[ -f "$HOME/.local/bin/env" ]] && . "$HOME/.local/bin/env"
 export GPG_TTY=$(tty)
+
+# --- STARSHIP PROMPT (debe ir al final) ---
+eval "$(starship init zsh)"
