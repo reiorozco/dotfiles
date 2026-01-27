@@ -8,12 +8,14 @@
 brew "bat"                      # cat con syntax highlighting
 brew "eza"                      # ls moderno con iconos
 brew "fzf"                      # Fuzzy finder (Ctrl+R)
+brew "starship"                 # Prompt minimalista y rápido
 brew "zoxide"                   # Navegación inteligente (z)
 brew "zsh-syntax-highlighting"  # Colores en comandos
 
 # Development
 brew "gh"                       # GitHub CLI
 brew "mprocs"                   # Ejecutar múltiples procesos
+# Node.js via Volta (https://volta.sh) - no usar brew para node
 
 # Security
 brew "gnupg"                    # GPG para firmar commits
@@ -21,6 +23,10 @@ brew "pinentry-mac"             # Diálogo de contraseña GPG
 
 # AI
 brew "gemini-cli"               # CLI de Gemini AI
+
+# --- FUENTES ---
+cask "font-jetbrains-mono-nerd-font"  # Fuente para editores
+cask "font-meslo-lg-nerd-font"        # Fuente para terminal
 
 # --- APLICACIONES ---
 # Terminal
@@ -63,6 +69,7 @@ vscode "formulahendry.auto-rename-tag"
 vscode "christian-kohler.path-intellisense"
 vscode "bradlc.vscode-tailwindcss"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-azuretools.vscode-containers"
 vscode "prisma.prisma"
 vscode "mikestead.dotenv"
 vscode "pkief.material-icon-theme"
