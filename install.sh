@@ -56,12 +56,6 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 fi
 
-# --- INSTALAR POWERLEVEL10K ---
-if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
-  echo "Installing Powerlevel10k..."
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
-fi
-
 # --- INSTALAR VOLTA ---
 if [ ! -d "$HOME/.volta" ]; then
   echo ""
