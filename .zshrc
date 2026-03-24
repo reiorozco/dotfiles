@@ -1,9 +1,10 @@
-# --- STARSHIP PROMPT ---
-# (Reemplaza Powerlevel10k)
-
 # --- LOCALE UTF-8 ---
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# --- VOLTA (gestor de versiones Node) ---
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # --- CONFIGURACIÓN BÁSICA ---
 export ZSH="$HOME/.oh-my-zsh"
@@ -35,8 +36,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Autocompletado case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# Autocompletado case-insensitive (bidireccional)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # --- ALIASES GENERALES ---
 alias brewup="brew update && brew upgrade && brew cleanup"
@@ -77,7 +78,8 @@ alias la="eza -la --icons --git"
 alias tree="eza --tree --icons"
 
 # Bat (reemplazo de cat con syntax highlighting)
-alias cat="bat"
+alias b="bat"
+alias cat="bat --paging=never"
 
 # FZF (búsqueda interactiva)
 [[ -f "$BREW_PREFIX/opt/fzf/shell/completion.zsh" ]] && source "$BREW_PREFIX/opt/fzf/shell/completion.zsh"
