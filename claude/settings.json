@@ -2,5 +2,8 @@
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
-  }
+  },
+  "theme": "dark",
+  "autoCompactEnabled": true,
+  "tui": "fullscreen"
 }
