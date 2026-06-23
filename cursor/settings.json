@@ -94,5 +94,10 @@
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.enableImages": true,
-  "workbench.iconTheme": "material-icon-theme"
+  "terminal.integrated.env.osx": {
+    "VOLTA_HOME": "/Users/reiorozco/.volta",
+    "PATH": "/Users/reiorozco/.volta/bin:${env:PATH}"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "window.autoDetectColorScheme": false
 }
