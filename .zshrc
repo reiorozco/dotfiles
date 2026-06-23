@@ -2,9 +2,7 @@
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-# --- VOLTA (gestor de versiones Node) ---
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# Volta se define en ~/.zshenv (se carga en TODAS las shells, no solo interactivas)
 
 # --- CONFIGURACIÓN BÁSICA ---
 export ZSH="$HOME/.oh-my-zsh"
