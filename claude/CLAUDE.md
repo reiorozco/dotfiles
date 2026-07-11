@@ -6,9 +6,16 @@ tanto en commits como en documentación o cualquier otro tipo de generación de 
 
 Para tareas complejas (múltiples archivos, cambios en front y back, nuevas features):
 1. Analiza la tarea
-2. Propone un plan multifase, usa el plan mode
-3. Crea el plan en specs/ con nombre secuencial (ej: 001-descripcion.md)
-4. Espera mi aprobación antes de ejecutar
-5. Actualiza el plan al completar cada fase, encontrar bloqueadores, o antes de pasar a la siguiente fase
+2. Define la especificación con `/spec` (co-creación interactiva antes de escribir código)
+3. Propone un plan multifase, usa el plan mode
+4. Crea el plan en specs/ con nombre secuencial (ej: 001-descripcion.md)
+5. Espera mi aprobación antes de ejecutar
+6. Valida y actualiza el plan al completar cada fase, encontrar bloqueadores, o antes de pasar a la siguiente fase
 
 Para tareas simples (un archivo, cambios pequeños): ejecuta directamente.
+
+## Principios
+- **Simplicidad primero.** Construye lo que se pide, con costuras limpias para extender. Evita sobre-ingeniería (YAGNI).
+- **Sigue las convenciones** del código existente antes de introducir patrones nuevos.
+- **Valida antes de dar por terminado**: corre/prueba el flujo, no asumas que funciona.
+- **Maneja errores y edge cases** de forma explícita.
