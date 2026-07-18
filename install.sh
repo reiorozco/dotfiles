@@ -140,6 +140,13 @@ for script in "$DOTFILES_DIR/claude/scripts"/*.sh; do
   chmod +x "$CLAUDE_DIR/scripts/$(basename "$script")"
 done
 
+# OpenCode + oh-my-openagent config
+OPENCODE_DIR="$HOME/.config/opencode"
+mkdir -p "$OPENCODE_DIR"
+backup_and_link "$DOTFILES_DIR/opencode/opencode.jsonc" "$OPENCODE_DIR/opencode.jsonc"
+backup_and_link "$DOTFILES_DIR/opencode/oh-my-openagent.json" "$OPENCODE_DIR/oh-my-openagent.json"
+backup_and_link "$DOTFILES_DIR/opencode/tui.json" "$OPENCODE_DIR/tui.json"
+
 # macOS defaults
 if [ -f "$DOTFILES_DIR/macos/defaults.sh" ]; then
   echo ""
