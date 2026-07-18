@@ -1,77 +1,88 @@
-# ===========================================
-# Brewfile - Backup de configuración Homebrew
-# Restaurar con: brew bundle --file=~/.Brewfile
-# ===========================================
-
-# --- CLI TOOLS ---
-# Shell & Terminal
-brew "bat"                      # cat con syntax highlighting
-brew "eza"                      # ls moderno con iconos
-brew "fzf"                      # Fuzzy finder (Ctrl+R)
-brew "starship"                 # Prompt minimalista y rápido
-brew "zoxide"                   # Navegación inteligente (z)
-brew "zsh-syntax-highlighting"  # Colores en comandos
-
-# Development
-brew "gh"                       # GitHub CLI
-brew "mprocs"                   # Ejecutar múltiples procesos
-# Node.js via Volta (https://volta.sh) - no usar brew para node
-
-# Security
-brew "gnupg"                    # GPG para firmar commits
-brew "pinentry-mac"             # Diálogo de contraseña GPG
-
-# AI
-brew "gemini-cli"               # CLI de Gemini AI
-
-# --- FUENTES ---
-cask "font-jetbrains-mono-nerd-font"  # Fuente para editores
-cask "font-meslo-lg-nerd-font"        # Fuente para terminal
-
-# --- APLICACIONES ---
-# Terminal
-cask "iterm2"                   # Terminal avanzada
-
-# Editores & IDEs
-cask "visual-studio-code"       # Editor principal
-cask "cursor"                   # Editor con AI
-cask "jetbrains-toolbox"        # IDEs JetBrains
-
-# DevOps
-cask "orbstack"                 # Docker & Linux VMs
-cask "postman"                  # API testing
-
-# Browser
-cask "google-chrome"            # Navegador principal
-
-# macOS Utilities
-cask "alt-tab"                  # Alt-tab estilo Windows
-cask "linearmouse"              # Configuración de mouse
-cask "keyclu"                   # Mostrar atajos de teclado
-cask "stats"                    # Monitor de sistema
-
-# AI
-cask "claude-code"              # CLI de Claude
-
-# Entertainment
-cask "spotify"                  # Música
-cask "steam"                    # Gaming
-cask "epic-games"               # Gaming
-
-# --- VS CODE EXTENSIONS ---
+tap "anomalyco/tap"
+tap "oven-sh/bun"
+# Database toolkit
+brew "atlas"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Modern, maintained replacement for ls
+brew "eza"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
+# Run multiple commands in parallel
+brew "mprocs"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Command-line interface for Vercel
+brew "vercel-cli"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
+# Enable Windows-like alt-tab
+cask "alt-tab"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
+# AI Coding Agent IDE
+cask "antigravity-ide"
+# Allows connection to a computer remotely
+cask "anydesk"
+# Desktop password and login vault
+cask "bitwarden"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# Launcher for *Epic Games* games
+cask "epic-games"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+# Web browser
+cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Find shortcuts for any installed application
+cask "keyclu"
+# Customise mouse behavior
+cask "linearmouse"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Collaboration platform for API development
+cask "postman"
+# Music streaming service
+cask "spotify"
+# System monitor for the menu bar
+cask "stats"
+# Video game digital distribution service
+cask "steam"
+# Open-source code editor
+cask "visual-studio-code"
+vscode "bradlc.vscode-tailwindcss"
+vscode "christian-kohler.path-intellisense"
 vscode "dbaeumer.vscode-eslint"
-vscode "esbenp.prettier-vscode"
+vscode "dsznajder.es7-react-js-snippets"
 vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-rename-tag"
+vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "pkief.material-icon-theme"
+vscode "prisma.prisma"
 vscode "usernamehw.errorlens"
 vscode "yoavbls.pretty-ts-errors"
-vscode "dsznajder.es7-react-js-snippets"
-vscode "formulahendry.auto-rename-tag"
-vscode "christian-kohler.path-intellisense"
-vscode "bradlc.vscode-tailwindcss"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-azuretools.vscode-containers"
-vscode "prisma.prisma"
-vscode "mikestead.dotenv"
-vscode "pkief.material-icon-theme"
-vscode "github.copilot"
-vscode "github.copilot-chat"
+uv "db-version-cli"
+npm "corepack"
