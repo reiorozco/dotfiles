@@ -38,9 +38,40 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # --- ALIASES GENERALES ---
-alias brewup="brew update && brew upgrade && brew cleanup"
+alias brewup="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias dev="cd ~/Dev"
 alias home="cd ~/"
+alias updateall="brewup && omoup"
+# Solo-visibilidad: NO actualiza nada, solo avisa si hay versiones nuevas
+# de Node/pnpm (Volta) o de paquetes globales de npm. Bumpear esas versiones
+# es una decisión consciente (volta install node@latest), no rutina automática.
+alias devcheck="volta list && echo '---' && npm outdated -g"
+alias vps-creds="gpg --decrypt ~/Dev/credenciales-vps.txt.gpg"
+
+# --- FUNCIÓN OMOUP ---
+# Actualiza el plugin oh-my-openagent (omo) en el cache de OpenCode.
+# Necesario porque su auto-updater no aplica el cambio en instalaciones
+# tipo sandbox (Npm.add()) — solo muestra un toast, no instala solo.
+# La ruta del cache es efímera (cambia entre sesiones de OpenCode), así
+# que se lee del propio `doctor` en vez de hardcodearla.
+function omoup() {
+  local doctor_output
+  doctor_output=$(bunx oh-my-openagent doctor 2>&1)
+  echo "$doctor_output"
+
+  local fix_cmd
+  fix_cmd=$(echo "$doctor_output" | grep -oE 'cd "[^"]+" && bun add oh-my-openagent@latest')
+
+  if [ -z "$fix_cmd" ]; then
+    return 0
+  fi
+
+  echo "\n→ Aplicando: $fix_cmd"
+  (eval "$fix_cmd" && bun pm trust oh-my-openagent @code-yeongyu/comment-checker 2>/dev/null)
+
+  echo "\n→ Verificando..."
+  bunx oh-my-openagent doctor
+}
 
 # --- FUNCIÓN KILLPORT ---
 # Uso: killport 3000 3001 8080
@@ -166,3 +197,6 @@ export GPG_TTY=$(tty)
 
 # --- STARSHIP PROMPT (debe ir al final) ---
 eval "$(starship init zsh)"
+
+# Added by Antigravity IDE
+export PATH="/Users/reiorozco/.antigravity-ide/antigravity-ide/bin:$PATH"
