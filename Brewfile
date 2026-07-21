@@ -1,7 +1,5 @@
 tap "anomalyco/tap"
 tap "oven-sh/bun"
-# Database toolkit
-brew "atlas"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Modern, maintained replacement for ls
@@ -14,8 +12,6 @@ brew "fzf"
 brew "gh"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-# Run multiple commands in parallel
-brew "mprocs"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Cross-shell prompt for astronauts
@@ -42,10 +38,6 @@ cask "anydesk"
 cask "bitwarden"
 # Terminal-based AI coding assistant
 cask "claude-code"
-# Write, edit, and chat about your code with AI
-cask "cursor"
-# Launcher for *Epic Games* games
-cask "epic-games"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 # Web browser
@@ -54,8 +46,6 @@ cask "google-chrome"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
-# Find shortcuts for any installed application
-cask "keyclu"
 # Customise mouse behavior
 cask "linearmouse"
 # Replacement for Docker Desktop
@@ -66,8 +56,6 @@ cask "postman"
 cask "spotify"
 # System monitor for the menu bar
 cask "stats"
-# Video game digital distribution service
-cask "steam"
 # Open-source code editor
 cask "visual-studio-code"
 vscode "bradlc.vscode-tailwindcss"

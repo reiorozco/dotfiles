@@ -73,7 +73,6 @@ cd $env:USERPROFILE\dotfiles\windows
 | zoxide | Navegación inteligente (z) |
 | gh | GitHub CLI |
 | gnupg | Firma de commits GPG |
-| mprocs | Ejecutar múltiples procesos |
 
 ### Aplicaciones
 
@@ -81,7 +80,6 @@ cd $env:USERPROFILE\dotfiles\windows
 |-----|-------------|
 | iTerm2 | Terminal avanzada |
 | VS Code | Editor principal |
-| Cursor | Editor con AI |
 | OrbStack | Docker & Linux VMs |
 | Postman | API testing |
 | Stats | Monitor de sistema |
