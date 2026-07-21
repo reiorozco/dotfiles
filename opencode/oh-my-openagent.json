@@ -71,5 +71,8 @@
     "writing": {
       "model": "anthropic/claude-sonnet-4-6"
     }
-  }
+  },
+  "disabled_hooks": [
+    "session-notification"
+  ]
 }
