@@ -73,7 +73,6 @@
     }
   },
   "disabled_hooks": [
-    "session-notification",
     "claude-code-hooks"
   ]
 }
